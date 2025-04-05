@@ -50,11 +50,13 @@ docker ps -a
 ```
 
 ## Deliverables
-- `output.txt`: Script output showing selected beverages.
-- Screenshot: `docker ps -a` showing all four services running.
+- [`output.txt`](./output.txt): Script output showing selected beverages.
+- ![Screenshot](./docker-services.png): `docker ps -a` showing all four services running.
 - [GitHub Repo](https://github.com/SayojyaPatil/AdvOS-Programming-Assignment-2)
 - [Docker Hub Image](https://hub.docker.com/r/sayojya2000/vending-machine-microservices)
-- Report: One-page summary of implementation and reflection.
+- [`Report (Word)`](./Advanced_OS_Assignment_Report_with_Screenshot.docx): One-page summary of implementation and reflection.
+- [`README.md`](./README.md)
+
 
 ## Reflection
 This project gave us real-world experience with building and integrating microservices using Docker, Thrift, and RPC. We learned to define services, manage builds with CMake, and orchestrate containers using Docker Compose. The hands-on experience improved our understanding of service-based architectures and containerization.
