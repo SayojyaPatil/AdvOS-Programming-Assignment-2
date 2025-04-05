@@ -58,3 +58,10 @@ docker ps -a
 
 ## Reflection
 This project gave us real-world experience with building and integrating microservices using Docker, Thrift, and RPC. We learned to define services, manage builds with CMake, and orchestrate containers using Docker Compose. The hands-on experience improved our understanding of service-based architectures and containerization.
+
+
+## Screenshot
+
+The following screenshot shows that all four services are running (`docker ps -a`):
+
+![Docker Services](docker-services.png)
