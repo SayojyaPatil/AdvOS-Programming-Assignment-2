@@ -1,6 +1,6 @@
 FROM yg397/thrift-microservice-deps:xenial
 
-ARG NUM_CPUS=4
+ARG NUM_CPUS=3
 
 COPY ./ /vending-machine-microservices
 RUN cd /vending-machine-microservices \

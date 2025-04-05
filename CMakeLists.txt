@@ -8,4 +8,5 @@ set(CMAKE_INSTALL_PREFIX /usr/local/bin)
 
 add_subdirectory(src)
 
+include_directories("/usr/local/include")
 
