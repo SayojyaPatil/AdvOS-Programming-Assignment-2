@@ -54,7 +54,7 @@ docker ps -a
 - ![Screenshot](./docker-services.png): `docker ps -a` showing all four services running.
 - [GitHub Repo](https://github.com/SayojyaPatil/AdvOS-Programming-Assignment-2)
 - [Docker Hub Image](https://hub.docker.com/r/sayojya2000/vending-machine-microservices)
-- [`Report (Word)`](./Advanced_OS_Assignment_Report_with_Screenshot.docx): One-page summary of implementation and reflection.
+- [`Report (pdf)`](./AOS_Assignment-2_Report.pdf): One-page summary of implementation and reflection.
 - [`README.md`](./README.md)
 
 
