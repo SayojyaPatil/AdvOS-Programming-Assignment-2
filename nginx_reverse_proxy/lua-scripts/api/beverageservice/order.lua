@@ -43,7 +43,7 @@ function _M.Order()
     		ngx.exit(ngx.HTTP_OK)
   	else
     		ngx.header.content_type = "text/plain"
-		ngx.say("Beverage Type: ", ret)
+		ngx.say("Beverage Name: ", ret)
     		ngx.exit(ngx.HTTP_OK)
   	end
 

@@ -1,52 +1,63 @@
-# Pre-requirements
+# Advanced Operating Systems Programming Assignment 2
 
-- Docker
-- Docker-compose
-- Python 3.5+ (with asyncio and aiohttp)
-- libssl-dev (apt-get install libssl-dev)
-- libz-dev (apt-get install libz-dev)
-- luarocks (apt-get install luarocks)
-- luasocket (luarocks install luasocket
-- Thrift 0.14.0 (./configure --with-lua --with-cpp --with-py)
--- (Thrift tutorial: https://www.youtube.com/watch?v=NK6hz2JM89w)
+## Group Members
+- Neeraj Saini
+- Sayojya Patil
 
-## Application Structure
+## Overview
+This project is a modified version of a microservices-based vending machine system. It includes enhancements to the existing services and the addition of a new microservice for beverage preference.
 
-![Vending machine Architecture](vendingmachine.png)
+## Features Implemented
+1. **Weather Service Update**:
+   - Replaced random weather logic.
+   - If `city_id` is **odd**, returns `WARM`.
+   - If `city_id` is **even**, returns `COLD`.
 
-# Cheatsheet on thrift 
+2. **New Beverage Preference Service**:
+   - A new microservice that selects a beverage based on the weather type.
+   - If `Hot`: randomly returns one of `cappuccino`, `latte`, or `espresso`.
+   - If `Cold`: randomly returns one of `lemonade`, `ice tea`, or `soda`.
 
-To compile vending_machine.thrift:
+3. **Integration in Order Beverage Service**:
+   - `placeOrder(city)` calls `getWeather()`, determines beverage type, and fetches beverage from the new service.
 
-thrift --gen cpp vending_machine.thrift
+4. **Updated Thrift Definitions**:
+   - Added new service definitions and enums in `vending_machine.thrift`.
 
-thrift --gen py vending_machine.thrift
+## Setup Instructions
 
-thrift --gen lua vending_machine.thrift
+### 1. Clone the Repository
+```bash
+git clone https://github.com/SayojyaPatil/AdvOS-Programming-Assignment-2.git
+cd AdvOS-Programming-Assignment-2
+```
 
-# cheatsheet on docker commands
+### 2. Build and Run Services
+```bash
+docker-compose build
+docker-compose up -d
+```
 
-1. To create docker image from docker file:
-$ docker build -t yourusername/repository-image-name .
-2. List docker images:
-$ docker images -a
-3. Retag the image with a version number: 
-$ docker tag yourusername/repository-image-name yourdockerhubusername/repository-image-name:version_1
-4. Docker-Hub login:
-$ docker login
-5. Push the local image to docker-hub
-$ docker push abiodunjames/example-node-app:v1 
-6. List docker containers:
-$ docker ps -a
+### 3. Generate Requests
+```bash
+cd script
+bash ./generate_request.sh > output.txt
+```
 
-Ref: 
-1. https://stackify.com/docker-build-a-beginners-guide-to-building-docker-images/
-2. https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
+### 4. Check Running Containers
+```bash
+docker ps -a
+```
 
-# cheatsheet on docker-compose
+## Deliverables
+- [`output.txt`](./output.txt): Script output showing selected beverages.
+- ![Screenshot](./docker-services.png): `docker ps -a` showing all four services running.
+- [GitHub Repo](https://github.com/SayojyaPatil/AdvOS-Programming-Assignment-2)
+- [Docker Hub Image](https://hub.docker.com/r/sayojya2000/vending-machine-microservices)
+- [`Report (pdf)`](./AOS_Assignment-2_Report.pdf): One-page summary of implementation and reflection.
+- [`README.md`](./README.md)
 
-1. Run docker-compose script to run all the containers:
-$ docker-compose up
-2. Stop docker containers that started from docker-compose script:
-$ docker-compose down
+
+## Reflection
+This project gave us real-world experience with building and integrating microservices using Docker, Thrift, and RPC. We learned to define services, manage builds with CMake, and orchestrate containers using Docker Compose. The hands-on experience improved our understanding of service-based architectures and containerization.
 

@@ -18,7 +18,7 @@ public:
 
 void BeveragePreferenceServiceHandler::getBeverage(std::string& _return, const BeverageType::type btype) {
   std::vector<std::string> hotBeverages = {"Cappuccino", "Latte", "Espresso"};
-  std::vector<std::string> coldBeverages = {"Lemonade", "Iced Coffee", "Soda"};
+  std::vector<std::string> coldBeverages = {"Lemonade", "Ice Tea", "Soda"};
   
   std::random_device rd;
   std::mt19937 gen(rd());
